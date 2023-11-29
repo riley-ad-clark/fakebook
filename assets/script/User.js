@@ -1,5 +1,4 @@
 'use strict';
-
 class User {
     #id;
     #name;
@@ -16,7 +15,7 @@ class User {
     get Id() { return this.#id; }
     get Name() { return this.#name; }
     get UserName() { return this.#userName; }
-    get Email() { return this.#email }
+    get Email() { return this.#email; }
 
     getInfo() {
         return {
@@ -24,18 +23,22 @@ class User {
             name: this.#name,
             userName: this.#userName,
             email: this.#email,
-        }
-    };
+        };
+    }
 
     getInfoHTML() {
-        const info = this.Info();
+        const info = this.getInfo();
         return `
-        <p>ID: ${info.id}</p>
-        <p>Name: ${info.name}</p>
-        <p>Username: ${info.userName}</p>
-        <p>Email: ${info.email}</p>
+            <div class="container">
+                <div class="modal">
+                    <p>ID: ${info.id}</p>
+                    <p>Name: ${info.name}</p>
+                    <p>Username: ${info.userName}</p>
+                    <p>Email: ${info.email}</p>
         `;
     }
 }
 
 export { User };
+
+
