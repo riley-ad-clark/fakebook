@@ -12,9 +12,9 @@
     --col-off-white: #d3d2d2;
     --col-light-grey: #9e9fa0;
     --col-dark-grey: #333;
-    --bg-dark-mode-main: #1a1d28;
-    --bg-dark-mode-lighter: #1e212e;
-    --bg-dark-mode-lightest: #272b3b;
+    --bg-dark-mode-main: #282b30;
+    --bg-dark-mode-lighter: #36393e;
+    --bg-dark-mode-lightest: #424549
   }
   
   .fade-in {
@@ -85,9 +85,7 @@ header {
   min-width: 100%;
   display: flex;
   overflow: hidden;
-
   height: 70px;
-  position: sticky; 
   top: 0;
   z-index: 99;
 }
