@@ -79,10 +79,6 @@
   line-height: 70px;
 }
 
-.m {
-  color: var(--col-main-light-blue);
-}
-
 header {
   background-color:var(--bg-dark-mode-darker);
   min-width: 100%;
@@ -130,14 +126,19 @@ nav.head ul li  {
 }
 
 .profile {
-  margin-top: 18px;
-  width: 30px;
-  height: 30px;
+  margin-top: 15px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
 }
 
 /*--------end of header--------*/
 
 /*----user input----*/
+
+.user-input {
+  margin-bottom: 50px;
+}
 .input-area {
   display: flex;
   justify-content: center;
@@ -210,6 +211,62 @@ input[type="file"] {
   transition: 0.3s ease-in-out;
 }
 /*----end of user input----*/
+/*----posts----*/
+.post-container {
+  width: min(100% - 40px, 1280px);
+  margin-inline: auto;
+  display: flex;
+  justify-content: center;
+}
+
+.user-post {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  background-color: var(--col-white);
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 50px;
+}
+
+.un-icon {
+  display: flex;
+  flex-direction: row;
+}
+
+.un-icon img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.un-icon p {
+  line-height: 40px;
+  margin-left: 15px;
+}
+
+.post-date {
+  line-height: 40px;
+}
+
+.post-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: var(--col-white);
+}
+
+.post-content {
+  margin-top: 20px;
+}
+
+.post-image {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  max-height: auto;
+}
+/*----end of posts----*/
 
 
 
