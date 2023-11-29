@@ -9,6 +9,7 @@
     --col-main-navy: #11131a;
     --col-main-navy-dark: #0e1016;
     --col-white: #eeecec;
+    --col-off-white: #d3d2d2;
     --col-light-grey: #9e9fa0;
     --col-dark-grey: #333;
     --bg-dark-mode-main: #1a1d28;
@@ -49,5 +50,91 @@
     opacity: 0;
     animation: fadeIn 0.2s ease-in-out forwards;
   }
+
+  body {
+    background-color: var(--bg-dark-mode-lighter);
+  }
   
   /*--------end of general--------*/
+
+/*--------header--------*/
+
+.container.flex.head {
+  display: flex;
+  justify-content: space-between;
+  line-height: 65px;
+}
+
+.fakebook {
+  width: 33%;
+}
+
+.fakebook h2 {
+  color: var(--col-main-light-blue);
+  text-transform: capitalize;
+  font-size: 25px;
+  line-height: 70px;
+}
+
+.m {
+  color: var(--col-main-light-blue);
+}
+
+header {
+  background-color:var(--bg-dark-mode-main);
+  min-width: 100%;
+  display: flex;
+  overflow: hidden;
+
+  height: 70px;
+  position: sticky; 
+  top: 0;
+  z-index: 99;
+}
+
+nav.head {
+  color: var(--col-white);
+  font-size: 0px;
+  display: flex;
+}
+
+nav.head a {
+  text-decoration: none;
+  color: var(--col-white);
+  transition: all 0.3s ease-in-out;
+  display: inline-block;
+  padding: 0 15px;
+  font-size: 14px;
+}
+
+nav.head a:hover {
+  color: var(--col-off-white);
+}
+
+nav.head {
+  width: 100%;
+  text-align: right;
+  justify-content: space-between;
+}
+
+nav.head ul li  {
+  display: inline;
+  text-transform: capitalize;
+}
+
+.profile-icon {
+  display: flex;
+  flex-direction: row-reverse;
+  width: 33%
+}
+
+.profile {
+  margin-top: 18px;
+  width: 30px;
+  height: 30px;
+}
+
+/*--------end of header--------*/
+
+
+
