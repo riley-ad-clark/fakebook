@@ -17,4 +17,25 @@ class User {
     get Name() { return this.#name; }
     get UserName() { return this.#userName; }
     get Email() { return this.#email }
+
+    getInfo() {
+        return {
+            id: this.#id,
+            name: this.#name,
+            userName: this.#userName,
+            email: this.#email,
+        }
+    };
+
+    getInfoHTML() {
+        const info = this.Info();
+        return `
+        <p>ID: ${info.id}</p>
+        <p>Name: ${info.name}</p>
+        <p>Username: ${info.userName}</p>
+        <p>Email: ${info.email}</p>
+        `;
+    }
 }
+
+export { User };
