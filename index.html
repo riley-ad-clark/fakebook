@@ -54,14 +54,17 @@
             <div class="container">
                 <div class="input-area">
                     <form>
-                        <textarea type="text-area" placeholder="Whats crackalacking?" rows="6"></textarea>
+                        <textarea type="text-area" placeholder="Whats crackalacking?" rows="6" class="post-content"></textarea>
                         <div class="post-area">
-                            <label class="custom-file-input-label">
-                            <i class="fas fa-upload"></i>
-                            Browse
-                            <input type="file" id="imageInput" accept="image/*">
-                        </label>
-                            <button class="post">Post</button>
+                            <div class="photo-select-area">
+                                <label class="custom-file-input-label">
+                                    <i class="fas fa-upload"></i>
+                                    Browse
+                                    <input type="file" id="imageInput" accept="image/*">
+                                </label>
+                                <p class="image-input-label"></p>
+                            </div>
+                            <button class="post" type="button">Post</button>
                         </div>
                     </form>
                 </div>
@@ -69,25 +72,12 @@
         </section>
     <!----end of user input---->
     <!----posts---->
-    <section class="posts">
-        <div class="post-container">
-            <div class="user-post">
-                <div class="post-header">
-                    <div class="un-icon">
-                        <img src="./assets/images/profile-picture.jpg" alt="user's profile picture">
-                        <p class="user-name">User Name</p>  
-                    </div>
-                    <div class="post-date">
-                    <p class="date-posted">Date Posted</p>
-                    </div>
-                </div>
-                <div class="post-content">
-                    <p class="post-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt nostrum quasi modi aperiam magnam corporis a enim quibusdam amet dolore ullam sequi sunt eaque, blanditiis nihil ab labore placeat natus totam ducimus. Ipsam reprehenderit corporis praesentium assumenda quas porro excepturi accusamus commodi ut repellat vel dicta tempora unde, id laboriosam!</p>
-                    <img src="assets/images/favicon.png" class="post-image">
-                </div>
-            </div>
-        </div>
-    </section>
+    <div class="post-container"></div>
     <!----end of posts---->
+    <!----modal---->
+    <div class="modal-box">
+
+    </div>
+    <!----end of modal---->
     </body>
 </html>
