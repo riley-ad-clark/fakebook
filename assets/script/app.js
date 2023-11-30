@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const postText = postContentInput.value;
         const selectedPhoto = imageInput.files[0];
     
-        // Check if either postText or selectedPhoto is present
+        // Checks if either postText or selectedPhoto is present
         if (postText.trim() !== '' || selectedPhoto) {
             // Reinitialize postContainer after deleting the placeholder post
             postContainer = document.querySelector('.post-container');
