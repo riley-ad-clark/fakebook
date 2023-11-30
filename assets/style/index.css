@@ -51,7 +51,7 @@
   
   .fade-in {
     opacity: 0;
-    animation: fadeIn 0.2s ease-in-out forwards;
+    animation: fadeIn 0.5s ease-in-out forwards;
   }
 
   body {
@@ -75,11 +75,12 @@
 .fakebook h2 {
   color: var(--col-main-light-blue);
   text-transform: capitalize;
-  font-size: 25px;
+  font-size: 35px;
   line-height: 70px;
 }
 
 header {
+  opacity: 0;
   background-color:var(--bg-dark-mode-darker);
   min-width: 100%;
   display: flex;
@@ -87,6 +88,7 @@ header {
   height: 70px;
   top: 0;
   z-index: 99;
+  animation: fadeIn 0.25s ease-in forwards 0.2s;
 }
 
 nav.head {
@@ -137,6 +139,8 @@ nav.head ul li  {
 /*----user input----*/
 
 .user-input {
+  opacity: 0;
+  animation: fadeIn 0.5s ease-in forwards 0.5s;
   margin-bottom: 50px;
 }
 .input-area {
@@ -189,6 +193,7 @@ input[type="file"] {
 .image-input-label {
   margin-left: 15px;
   color: var(--col-white);
+  animation: fadeIn 0.25s ease-in forwards;
 }
 
 .photo-select-area {
@@ -269,8 +274,6 @@ input[type="file"] {
   background-color: var(--col-white);
 }
 
-
-
 .post-image {
   display: block;
   margin: 0 auto;
@@ -281,7 +284,8 @@ input[type="file"] {
 }
 
 .user-post {
-  margin-bottom: 20px; /* Add some margin between posts for spacing */
+  margin-bottom: 20px;
+  animation: fadeIn 0.25s ease-in forwards;
 }
 
 .post-container {
@@ -304,6 +308,7 @@ input[type="file"] {
   position: absolute;
   right: 15px;
   top: 85px;
+  animation: fadeIn 0.25s ease-in-out forwards;
 }
 
 .modal p {

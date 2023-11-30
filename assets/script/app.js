@@ -12,15 +12,12 @@ document.addEventListener('DOMContentLoaded', function () {
     const postBtn = document.querySelector('.post');
     const imageInputLabel = document.querySelector('.image-input-label');
 
-    const user = new User(
-        123, // id
-        'Jay Jonah Jameson', // name
-        'JJJ_DA_BEST', // username
-        'jjj@jmail.jom', // email
-    );
-
     const subscriber = new Subscriber(
-        ['Page 1', 'Page 2', 'Page 3'], // pages
+        462, // id
+        'Riley Clark', // name
+        'rileyc313', // username
+        'rileyclarky@gmail.com', // email
+        ['This', 'Is', 'An', 'Array'], // pages
         ['Spider-lovers', 'Spider-haters'], // groups
         true, // canMonetize
     );
@@ -29,27 +26,28 @@ document.addEventListener('DOMContentLoaded', function () {
         const currentDate = new Date();
         const formattedDate = `${currentDate.toLocaleString('default', { month: 'short' })} ${currentDate.getDate()}, ${currentDate.getFullYear()} ${currentDate.getHours()}:${currentDate.getMinutes()}`;
     
-        // Get user input
+        // Get inputs (from user ofc)
         const postText = postContentInput.value;
         const selectedPhoto = imageInput.files[0];
     
-        if (postText.trim() !== '') {
+        // Check if either postText or selectedPhoto is present
+        if (postText.trim() !== '' || selectedPhoto) {
             // Reinitialize postContainer after deleting the placeholder post
             postContainer = document.querySelector('.post-container');
-            
+    
             // Create a new post box HTML with an object URL for the image
             const postBoxHTML = createPostBoxHTML(formattedDate, postText, selectedPhoto);
-
+    
             if (postContainer) {
                 // Insert the post box HTML at the beginning of the post container
                 postContainer.insertAdjacentHTML('afterbegin', postBoxHTML);
-    
                 postContentInput.value = '';
                 imageInput.value = '';
                 imageInputLabel.innerHTML = '';
             }
         }
     });
+    
 
     // Update the image input label when a file is selected
     if (imageInputLabel !== false) {
@@ -76,7 +74,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         if (modalBox.classList.contains('show')) {
             // If it's visible, show the html from classes
-            modalBox.innerHTML = user.getInfoHTML() + subscriber.getInfoHTML();
+            modalBox.innerHTML = subscriber.getInfoHTML();
             htmlBody.appendChild(modalBox);
             document.addEventListener('click', closeIfClickedOutside);
         } else {
@@ -102,7 +100,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Function to create a post box HTML
     function createPostBoxHTML(datePosted, postText, postImage) {
-        const userName = user.UserName;
+        const userName = subscriber.UserName;
 
         // Check if an image is selected
         if (postImage instanceof File) {

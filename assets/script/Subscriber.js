@@ -2,12 +2,13 @@
 
 import { User } from "./User.js"
 
-class Subscriber {
+class Subscriber extends User {
     #pages;
     #groups;
     #canMonetize;
 
-    constructor(pages, groups, canMonetize) {
+    constructor(id, name, userName, email, pages, groups, canMonetize) {
+        super(id, name, userName, email);
         this.#pages = pages;
         this.#groups = groups;
         this.#canMonetize = canMonetize;
@@ -17,7 +18,7 @@ class Subscriber {
     get Groups() { return this.#groups; }
     get CanMonetize() { return this.#canMonetize; }
 
-    getInfo() {
+    get info() {
         return {
             pages: this.#pages,
             groups: this.#groups,
@@ -26,20 +27,19 @@ class Subscriber {
     }
 
     getInfoHTML() { 
-        const subscriberInfo = this.getInfo();
-        const pagesString = subscriberInfo.pages.join(', ');
-        const groupsString = subscriberInfo.groups.join(', ');
-    
-        return `
-                    <p>Pages: ${pagesString}</p>
+        const info = this.info;
+        const pageString = info.pages.join(', ');
+        const groupsString = info.groups.join(', ');
+
+        // I quite frankly love the HTML being in here...
+        return `    ${super.getInfoHTML()}
+                    <p>Pages: ${pageString}</p>
                     <p>Groups: ${groupsString}</p>
-                    <p>Can Monetize: ${subscriberInfo.canMonetize}</p>
+                    <p>Can Monetize: ${info.canMonetize}</p>
                 </div>
             </div>
         `;
     }
-    
-}
+}    
 
 export { Subscriber };
-
