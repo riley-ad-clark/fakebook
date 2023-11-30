@@ -1,6 +1,5 @@
 'use strict';
 
-import { User } from './User.js';
 import { Subscriber } from './Subscriber.js';
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -60,7 +59,7 @@ document.addEventListener('DOMContentLoaded', function () {
     
             // Create a new post box HTML with an object URL for the image
             const postBoxHTML = createPostBoxHTML(formattedDate, postText, selectedPhoto);
-    
+        
             if (postContainer) {
                 // Insert the post box HTML at the beginning of the post container
                 postContainer.insertAdjacentHTML('afterbegin', postBoxHTML);
