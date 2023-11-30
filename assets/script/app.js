@@ -12,6 +12,29 @@ document.addEventListener('DOMContentLoaded', function () {
     const postBtn = document.querySelector('.post');
     const imageInputLabel = document.querySelector('.image-input-label');
 
+    function playTypeSound() {
+        const typeSound = new Audio('./assets/audio/type.mp3');
+            typeSound.onloadeddata = function () {
+                typeSound.volume = 0.5
+                typeSound.play();
+            };
+    }
+
+    function playPopSound() {
+    const popSound = new Audio('./assets/audio/pop.mp3');
+        popSound.onloadeddata = function () {
+            popSound.play();
+        };
+    }
+    
+    function playStartupSound() {
+    const startupSound = new Audio("./assets/audio/startup.mp3")
+        startupSound.volume = 0.5
+        startupSound.play();
+    }
+
+    window.onload = playStartupSound();
+
     const subscriber = new Subscriber(
         462, // id
         'Riley Clark', // name
@@ -77,11 +100,13 @@ document.addEventListener('DOMContentLoaded', function () {
             modalBox.innerHTML = subscriber.getInfoHTML();
             htmlBody.appendChild(modalBox);
             document.addEventListener('click', closeIfClickedOutside);
+            playTypeSound();
         } else {
             // If it's hidden, remove the html from classes...
             modalBox.innerHTML = '';
             modalBox.remove();
             document.removeEventListener('click', closeIfClickedOutside);
+            playTypeSound();
         }
     });
 
@@ -105,7 +130,7 @@ document.addEventListener('DOMContentLoaded', function () {
         // Check if an image is selected
         if (postImage instanceof File) {
             const imageURL = URL.createObjectURL(postImage);
-
+            playPopSound();
             return `
                 <div class="user-post">
                     <div class="post-header">
@@ -124,6 +149,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 </div>`;
         } else {
             // Handle the case when no image is selected
+            playPopSound();
             return `
                 <div class="user-post">
                     <div class="post-header">
