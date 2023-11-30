@@ -28,6 +28,8 @@ class User {
 
     getInfoHTML() {
         const info = this.getInfo();
+
+        // I quite frankly love HTML being in here...
         return `
             <div class="container">
                 <div class="modal">
